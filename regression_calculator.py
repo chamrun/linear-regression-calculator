@@ -27,6 +27,17 @@ def main():
     #
     # # We want to find the a and b values for the regression line.
     a, b = find_a_b_based_on_least_squares(train_df)
+
+def multiply_dataframes(df1, df2):
+    # convert dataframes to numpy matrices
+    mat1 = df1.values
+    mat2 = df2.values
+    # perform matrix multiplication
+    result = np.matmul(mat1, mat2)
+    # return as a DataFrame
+    return pd.DataFrame(result)
+
+
 def find_a_b_based_on_least_squares(df):
     x = df['x']
     y = df['y']
