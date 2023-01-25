@@ -15,17 +15,6 @@ def main():
     train_df = df.iloc[:train_size]
     test_df = df.iloc[train_size:]
 
-    # dft = df.transpose()
-    #
-    # # We want to calculate the multiple of df and dft.
-    # dft_in_df = multiply_dataframes(dft, df)
-    #
-    # dft_in_y = multiply_dataframes(dft, df['y'])
-    #
-    # # equation is dft_in_df * a = dft_in_y
-    # equation = pd.concat([dft_in_df, dft_in_y], axis=1)
-    #
-    # # We want to find the a and b values for the regression line.
     a, b = find_a_b_based_on_least_squares(train_df)
     test_result = test_a_b(a, b, test_df)
 
