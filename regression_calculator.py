@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 
 def main():
@@ -22,6 +23,10 @@ def main():
         print(f'Read value: {test_result[i][0]}'
               f'\nEstimated value: {test_result[i][1]}'
               f'\nError: {test_result[i][2]}\n')
+
+    plt.plot(df['x'], df['y'], 'o')
+    plt.plot(df['x'], a * df['x'] + b)
+    plt.show()
 
 
 def multiply_dataframes(df1, df2):
