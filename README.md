@@ -1,4 +1,4 @@
-# linear_regression_calculator
+# Linear Regression Calculator
 
 A simple implementation of linear regression with a sample data file in csv format. The program reads the csv file, splits it into train and test sets, performs linear regression on the training set and tests the results on the test set. It also plots the data and regression line.
 
