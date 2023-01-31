@@ -4,9 +4,12 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    # We want to read the csv file.
-    # It has no headers and the first line is the data.
-    # The first column is x and the second column is y.
+    """Main function to execute the program.
+
+    This function reads data from a csv file, splits it into training and testing data,
+    finds the values of 'a' and 'b' using the least squares method, tests the found values on the testing data,
+    and plots the data with the estimated line.
+    """
 
     df = pd.read_csv('data.csv', header=None, names=['x', 'y'])
 
@@ -30,6 +33,12 @@ def main():
 
 
 def multiply_dataframes(df1, df2):
+    """Multiply two DataFrames.
+
+    This function converts the given DataFrames to numpy matrices,
+    performs matrix multiplication, and returns the result as a DataFrame.
+    """
+    
     # convert dataframes to numpy matrices
     mat1 = df1.values
     mat2 = df2.values
@@ -40,6 +49,11 @@ def multiply_dataframes(df1, df2):
 
 
 def find_a_b_based_on_least_squares(df):
+    """Find values of 'a' and 'b' using the least squares method.
+
+    This function takes a DataFrame as input and returns the values of 'a' and 'b'
+    using the least squares method for finding the line of best fit for the given data.
+    """
     x = df['x']
     y = df['y']
     n = len(x)
@@ -53,6 +67,12 @@ def find_a_b_based_on_least_squares(df):
 
 
 def test_a_b(a, b, df):
+    """Test the given values of 'a' and 'b' on the data.
+
+    This function takes the values of 'a' and 'b' and a DataFrame as input,
+    tests the given values on the data, and returns a list of read values,
+    estimated values, and errors.
+    """
     x = df['x'].values
     y = df['y'].values
     test_result = []
