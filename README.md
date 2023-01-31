@@ -12,7 +12,7 @@ A simple implementation of linear regression with a sample data file in csv form
 To run the program, simply run the following command:
 
 ```
-python main.py
+python regression_calculator.py
 ```
 
 ## Input
